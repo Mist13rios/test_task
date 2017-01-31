@@ -3,3 +3,4 @@ test_task/__pycache__/
 *__init__.py
 task_1/__pycache__/
 task_1/migrations/__pycache__/
+task_1/migrations/

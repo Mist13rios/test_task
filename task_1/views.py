@@ -1,5 +1,6 @@
 from django.shortcuts import render
+from task_1.models import Examples
 
-# Create your views here.
-def main():
-    pass
+
+def main(request):
+    return render(request, 'main.html', {'Examples': Examples.objects.all()})

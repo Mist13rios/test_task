@@ -1,3 +1,4 @@
 from django.contrib import admin
+from task_1.models import Examples
 
-# Register your models here.
+admin.site.register(Examples)
