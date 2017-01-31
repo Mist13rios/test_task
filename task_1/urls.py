@@ -17,5 +17,6 @@ from django.conf.urls import url
 from . import views
 
 urlpatterns = [
+    url(r'discription', views.example_result, name='example_result'),
     url(r'^', views.main, name='main'),
 ]
