@@ -1,0 +1,25 @@
+<div class='col-xs-8' style='color:white; padding-top: 1%; height: 100%;'>
+    <p> Добро пожаловать на тестовую страницу </p>
+        <div class='col-xs-6' id='example_list'>
+          <div class="dropdown">
+            <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" style='color:black;'>
+                Выберете шаблон
+                <span class="caret"></span>
+            </button>
+
+            <ul class="dropdown-menu">
+                {% for e in Examples %}
+                    <li id='{{e.name}}' style='color:black;cursor: pointer; padding-left: 10px;'>{{e.name}}</li>
+                {% endfor %}
+            </ul>
+          </div>
+        <br>
+    </div>
+
+    <div class='col-xs-6' >
+      <p> Вывод шаблона : </p>
+      <div id='result'>
+      
+      </div>
+    </div>
+</div>

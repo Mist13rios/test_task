@@ -1,0 +1,24 @@
+<div class='col-xs-8' style='color:white; padding-top: 1%; height: 100%;'>
+    <p> Wellcome to test page </p>
+        <div class='col-xs-6' id='example_list'>
+          <div class="dropdown">
+            <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" style='color:black;'>
+                Select example
+                <span class="caret"></span>
+            </button>
+
+            <ul class="dropdown-menu">
+                {% for e in Examples %}
+                    <li id='{{e.name}}' style='color:black;cursor: pointer; padding-left: 10px;'>{{e.name}}</li>
+                {% endfor %}
+            </ul>
+          </div>
+        <br>
+    </div>
+
+    <div class='col-xs-6' >
+      <p> Result of example : </p>
+      <div id='result'>
+      </div>
+    </div>
+</div>

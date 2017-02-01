@@ -1,5 +1,4 @@
 $(document).ready(function () {
-    console.log('main page loaded')
     $('#example_list').on('click', 'li', function(){
         var example_name= this.id;
         result_is(example_name);
@@ -8,14 +7,13 @@ $(document).ready(function () {
 });
 
 function result_is(example_name){
-    console.log(' Click detected, select ' + example_name)
     $.ajax({
         url : 'discription',
         type : 'GET',
         data : { 'name' : example_name},
         success : function(json){
-            $('#result div').remove();
-            $('#result').append(json);
+            $('#result p').remove();
+            $('#result').append('<p>' + json +'</p>');
             
             $('#example_list p').remove();
             $('#example_list').append('<p>' +  'Selected: <br>' + example_name + '</p>')

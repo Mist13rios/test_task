@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang='en'>
 {% load staticfiles %}
+{% load i18n %}
 <head>
   <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
@@ -21,32 +22,34 @@
 
   <div class='col-xs-2'>
   </div>
+{% get_current_language as LANGUAGE_CODE %}
 
-  <div class='col-xs-8' style='color:white; padding-top: 1%; height: 100%;'>
-      <p> Wellcome to test page </p>
-      <div class='col-xs-6' id='example_list'>
-        <div class="dropdown">
+{% language LANGUAGE_CODE %}
+    <div class='col-xs-8' style='color:white; padding-top: 1%; height: 100%;'>
+    <p> {% trans 'Wellcome to test page' %} </p>
+        <div class='col-xs-6' id='example_list'>
+          <div class="dropdown">
             <button class="btn dropdown-toggle" type="button" data-toggle="dropdown" style='color:black;'>
-                Select example 
+                {% trans 'Select example' %}
                 <span class="caret"></span>
             </button>
+
             <ul class="dropdown-menu">
-            {% for e in Examples %}
-                <li id='{{e.name}}' style='color:black;cursor: pointer; padding-left: 10px;'>{{e.name}}</li>
-            {% endfor %}
+                {% for e in Examples %}
+                    <li id='{{e.name}}' style='color:black;cursor: pointer; padding-left: 10px;'>{{e.name}}</li>
+                {% endfor %}
             </ul>
-        </div>
+          </div>
         <br>
-      </div>
+    </div>
 
-      <div class='col-xs-6' name='result'>
-        <p> Result of example : </p>
-        <div>
-        For Result here
-        </div>
+    <div class='col-xs-6' >
+      <p> {% trans 'Result of example :' %} </p>
+      <div id='result'>
       </div>
-  </div>
-
+    </div>
+</div>
+{% endlanguage %}
   <div class='col-xs-2' style='height:100%;'>
   </div>
 </div>
